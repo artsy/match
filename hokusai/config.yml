@@ -1,0 +1,6 @@
+---
+project-name: match
+hokusai-required-version: ">=0.5.18"
+git-remote: git@github.com:artsy/match.git
+template-config-files:
+  - s3://artsy-citadel/k8s/hokusai-vars.yml
