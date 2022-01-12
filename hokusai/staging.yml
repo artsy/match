@@ -119,6 +119,7 @@ kind: Ingress
 metadata:
   name: {{ project_name }}
   annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: 30M
     nginx.ingress.kubernetes.io/whitelist-source-range: "{{ externalIngressAllowSourceIP|join(',') }}"
 spec:
   ingressClassName: nginx
