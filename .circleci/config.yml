@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  hokusai: artsy/hokusai@0.10.0
+
+only_main: &only_main
+  context: hokusai
+  filters:
+    branches:
+      only: main
+
+workflows:
+  build-deploy:
+    jobs:
+      - hokusai/push:
+          name: push-staging-image
+          <<: *only_main
+
+      - hokusai/deploy-staging:
+          <<: *only_main
+          project-name: match
+          requires:
+            - push-staging-image
