@@ -44,9 +44,9 @@ spec:
           resources:
             requests:
               cpu: 50m
-              memory: 256Mi
+              memory: 1Gi
             limits:
-              memory: 512Mi
+              memory: 2Gi
           readinessProbe:
             httpGet:
               port: {{ project_name }}-http
